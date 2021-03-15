@@ -1,9 +1,18 @@
 # Web Challenge
 
-## Running the app
+## Api
+
+### Running the app
 
 ```bash
+$ cd api
 $ docker-compose up
+```
+### Running the tests
+
+```bash
+$ cd api
+$ npm run tests
 ```
 ## Stay in touch
 

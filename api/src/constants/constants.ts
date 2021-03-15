@@ -1,0 +1,5 @@
+export const DATABASE_CONNECTION = 'DATABASE_CONNECTION';
+
+export const REPOSITORIES = {
+  POST: 'POST',
+};

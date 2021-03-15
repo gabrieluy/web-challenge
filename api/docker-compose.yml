@@ -1,4 +1,4 @@
-version: '3.3'
+version: '3.8'
 
 services:
   main:
@@ -28,8 +28,8 @@ services:
         - .env
     environment:
       POSTGRES_PASSWORD: ${DB_PASSWORD:-password}
-      POSTGRES_USER: ${DB_USERNAME:-user}
-      POSTGRES_DB: ${DB_DATABASE_NAME:-db}
+      POSTGRES_USER: ${DB_USER:-user}
+      POSTGRES_DB: ${DB_NAME:-db}
       PG_DATA: /var/lib/postgresql/data
     ports:
       - 5432:5432
