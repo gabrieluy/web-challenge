@@ -1,0 +1,44 @@
+<h1>{{ header }}</h1>
+<form nz-form [formGroup]="form" (ngSubmit)="submitForm(form.value)">
+  <nz-form-item nzAlign="bottom">
+    <nz-form-control [nzSpan]="24">
+      <div class="btn-container">
+        <button nz-button nzType="primary" [disabled]="!isFormValid()">Save</button>
+        <button nz-button (click)="resetForm($event)">Reset</button>
+      </div>
+    </nz-form-control>
+  </nz-form-item>
+    <nz-form-item>
+      <input formControlName="id" [value]="post.id" hidden>
+      <nz-form-label [nzSpan]="3" nzRequired>Title</nz-form-label>
+      <nz-form-control [nzSpan]="10" nzErrorTip="Please write the post title">
+        <input nz-input type="text" formControlName="title" placeholder="the title of the post" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="3" nzRequired>Content</nz-form-label>
+      <nz-form-control [nzSpan]="10" nzErrorTip="Please write the post content">
+        <textarea rows="4" nz-input type="textarea" formControlName="content" placeholder="the content of the post"> </textarea>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="3">Latitude</nz-form-label>
+      <nz-form-control [nzSpan]="10">
+        <nz-input-number formControlName="lat" [nzMin]="-90" [nzMax]="90" [nzStep]="1" [nzPrecision]="9">
+        </nz-input-number>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="3">Longitude</nz-form-label>
+      <nz-form-control [nzSpan]="10">
+        <nz-input-number formControlName="long" [nzMin]="-180" [nzMax]="180" [nzStep]="1" [nzPrecision]="10">
+        </nz-input-number>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="3" nzRequired>Image Url</nz-form-label>
+      <nz-form-control [nzSpan]="10" nzErrorTip="Please write the post image_url">
+        <input nz-input type="text" formControlName="image_url" placeholder="the image_url of the post" />
+      </nz-form-control>
+    </nz-form-item>
+</form>

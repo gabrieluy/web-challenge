@@ -1,0 +1,48 @@
+<div nz-row nzType="flex" nzJustify="end">
+  <button nz-button nzType="primary" nzShape="round" routerLink="/posts/create">
+    <i nz-icon nzType="plus"></i>Add new
+  </button>
+</div>
+<br>
+<div>
+  <nz-table #postsTable [nzData]="posts">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Image</th>
+        <th>Title</th>
+        <th>Content</th>
+        <th>Location</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let post of postsTable.data; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>
+          <nz-avatar [nzShape]="'square'" [nzSize]="64" [nzSrc]="post.image_url"></nz-avatar>
+        </td>
+        <td>
+          <a [routerLink]="['/posts/edit', post.id]">
+            {{ post.title }}
+          </a>
+        </td>
+        <td>
+            {{ post.content }}
+        </td>
+        <td>
+          <button nz-button nzType="primary" (click)="showLocationModal(post)">
+            <i nz-icon nzType="environment"></i>Show
+          </button>
+        </td>
+        <td>
+          <nz-divider nzType="vertical"></nz-divider>
+          <a nz-popconfirm nzPopconfirmTitle="Are you sure you want to delete this post"
+            nzPopconfirmPlacement="bottom" (nzOnConfirm)="deletePost(post.id)">
+            <i nz-icon nzType="delete"></i>Delete
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>

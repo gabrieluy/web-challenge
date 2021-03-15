@@ -1,0 +1,31 @@
+nz-layout {
+  height: 100%;
+}
+
+.inner-layout {
+  padding: 0 24px 24px;
+}
+
+nz-header {
+  background: white;
+  padding: 0;
+}
+
+nz-content {
+  margin: 0 16px;
+}
+
+.inner-content {
+  padding: 24px;
+  background: white;
+  min-height: 90%;
+  min-width: 90%;
+}
+
+nz-footer {
+  text-align: center;
+}
+
+nz-breadcrumb {
+  margin: 16px 0;
+}
