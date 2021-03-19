@@ -8,6 +8,8 @@
 $ cd api
 $ docker-compose up
 ```
+For api specification go to http://localhost:3000/api/
+
 ### Running the tests
 
 ```bash
@@ -23,6 +25,7 @@ $ npm run tests
 $ cd app
 $ ng serve
 ```
+Go to http://localhost:4200
 
 ## Stay in touch
 
